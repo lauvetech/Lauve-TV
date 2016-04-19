@@ -1,0 +1,19 @@
+Apps List:
+
+-Films: New films with their info and which apps they are available on.
+
+-Local: Share files with Lauve 
+
+-Music: Local music 
+
+-Search: Search youtube, quick info on actors and films.
+
+-Store: Install apps, games
+
+-Gallery: View photos on network and on device
+
+-Soundcloud
+
+-Youtube
+
+-A free game...

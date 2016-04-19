@@ -1,0 +1,585 @@
+@font-face {
+  font-family: "Roboto";
+  src: local(Roboto Thin), url("../fonts/roboto/Roboto-Thin.woff2") format("woff2"), url("../fonts/roboto/Roboto-Thin.woff") format("woff"), url("../fonts/roboto/Roboto-Thin.ttf") format("truetype");
+  font-weight: 200; }
+
+@font-face {
+  font-family: "Roboto";
+  src: local(Roboto Light), url("../fonts/roboto/Roboto-Light.woff2") format("woff2"), url("../fonts/roboto/Roboto-Light.woff") format("woff"), url("../fonts/roboto/Roboto-Light.ttf") format("truetype");
+  font-weight: 300; }
+
+@font-face {
+  font-family: "Roboto";
+  src: local(Roboto Regular), url("../fonts/roboto/Roboto-Regular.woff2") format("woff2"), url("../fonts/roboto/Roboto-Regular.woff") format("woff"), url("../fonts/roboto/Roboto-Regular.ttf") format("truetype");
+  font-weight: 400; }
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/roboto/Roboto-Medium.woff2") format("woff2"), url("../fonts/roboto/Roboto-Medium.woff") format("woff"), url("../fonts/roboto/Roboto-Medium.ttf") format("truetype");
+  font-weight: 500; }
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/roboto/Roboto-Bold.woff2") format("woff2"), url("../fonts/roboto/Roboto-Bold.woff") format("woff"), url("../fonst/roboto/Roboto-Bold.ttf") format("truetype");
+  font-weight: 700; }
+
+
+/*Required*/
+
+html{
+font-family: "Roboto", sans-serif;
+font-weight: normal;
+-webkit-touch-callout:none;
+-webkit-user-select:none;	
+}
+
+body{
+overflow-x: hidden; 
+}
+
+main{
+    padding: 3%;
+    outline: none;
+	background-color: transparent;
+	
+
+}
+
+*{
+	outline: none;
+ -webkit-transition: .1s all;
+}
+
+body.theme-dark{
+	background: #232526; /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #232526 , #414345); /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #232526 , #414345); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        
+}
+
+body.theme-light{
+	
+
+background: #ECE9E6; /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #ECE9E6 , #FFFFFF); /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #ECE9E6 , #FFFFFF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        
+}
+
+p{
+	font-size: 1.5vw;
+}
+
+h1,h2,h3,h4,h5,h6{
+	font-weight: 400;
+	
+}
+
+h1,h2,h3,h4,h5,h6,p,.btn,.title{
+	margin-bottom: 1vw;
+	margin-top: 1vw;
+}
+
+body.theme-dark{
+	color: whitesmoke;
+}
+
+body.theme-light{
+
+	color: black;
+}
+
+
+
+/*--------------------------*/
+
+
+/* Scrollbars*/
+
+.row::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+
+
+body::-webkit-scrollbar {
+    width: 5px;
+}
+ 
+body::-webkit-scrollbar-track {
+    background:rgba(0,0,0,0.8);
+    border-radius: 0px;
+}
+ 
+body::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: gray;
+}
+
+/**/
+
+
+/*Properties*/
+
+.light{
+    color: whitesmoke;
+}
+
+.dark{
+	color: gray;
+}
+/*--------------------------*/
+
+
+/*Controls*/
+
+.title{
+
+    font-size: 2vw;
+	font-weight: normal;
+
+}
+
+body.theme-light .title{
+	color: black;
+}
+
+body.theme-dark .title{
+	color: whitesmoke;
+}
+
+
+/*Buttons*/
+
+.btn{
+    background-color: whitesmoke;
+    color: dimgray;
+	display: inline-block;
+	position: relative;
+	border: 0;
+	border-radius: 0.1vw;
+	height: 4vh;
+	width: auto;
+	padding-left: 3vw;
+	padding-right:3vw;
+	font-size: 1.3vw;
+	font-family: "Roboto", sans-serif;
+	font-weight: 400;
+	opacity: 0.70;
+	outline: none;
+	text-align: center;
+	vertical-align: middle;
+	padding-top: 1vh;
+	margin-left: 1vw;
+}
+
+.btn:focus{
+
+   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.40),0 6px 20px 0 rgba(0,0,0,0.40);
+	transform: scale(1.1,1.1);
+	opacity: 1;
+	background-color: ghostwhite;
+}
+
+.btn-light{
+    background-color: gainsboro;
+    color: black;
+	display: inline-block;
+	position: relative;
+	border: 0;
+	border-radius: 0.2vw;
+	height: 4vh;
+	width: auto;
+	padding-left: 3vw;
+	padding-right:3vw;
+	font-size: 1.3vw;
+	font-family: "Roboto", sans-serif;
+	font-weight: 400;
+	opacity: 0.70;
+	outline: none;
+	text-align: center;
+	vertical-align: middle;
+	padding-top: 1vh;
+	margin-left: 1vw;
+}
+
+.btn-light:focus{
+
+   box-shadow: 0 2px 20px 0 rgba(0,0,0,0.40),0 3px 10px 0 rgba(0,0,0,0.40);
+	transform: scale(1.1,1.1);
+	opacity: 1;
+	background-color: ghostwhite;
+}
+
+.btn-dark{
+    background-color: transparent;
+    color: whitesmoke;
+	display: inline-block;
+	position: relative;
+	border: 0;
+	border-radius: 0.1vw;
+	height: 4vh;
+	width: auto;
+	padding-left: 3vw;
+	padding-right:3vw;
+	font-size: 1.3vw;
+	font-family: "Roboto", sans-serif;
+	font-weight: 400;
+	opacity: 0.70;
+	outline: none;
+	text-align: center;
+	vertical-align: middle;
+	padding-top: 1vh;
+	margin-left: 1vw;
+}
+
+btn-dark:focus{
+
+   box-shadow: 0 2px 20px 0 rgba(0,0,0,0.40),0 3px 10px 0 rgba(0,0,0,0.40);
+	transform: scale(1.1,1.1);
+	opacity: 1;
+	font-family: "Roboto", sans-serif;
+	background-color: rgba(0,0,0,0.40);
+}
+
+body.theme-light .btn{
+    background-color: gainsboro;
+    color: black;
+	display: inline-block;
+	position: relative;
+	border: 0;
+	border-radius: 0.2vw;
+	height: 4vh;
+	width: auto;
+	padding-left: 3vw;
+	padding-right:3vw;
+	font-size: 1.3vw;
+	font-family: "Roboto", sans-serif;
+	font-weight: 400;
+	opacity: 0.70;
+	outline: none;
+	text-align: center;
+	vertical-align: middle;
+	padding-top: 1vh;
+	margin-left: 1vw;
+}
+
+body.theme-light .btn:focus{
+
+   box-shadow: 0 2px 20px 0 rgba(0,0,0,0.40),0 3px 10px 0 rgba(0,0,0,0.40);
+	transform: scale(1.1,1.1);
+	opacity: 1;
+	background-color: ghostwhite;
+}
+
+body.theme-dark .btn{
+    background-color: transparent;
+    color: whitesmoke;
+	display: inline-block;
+	position: relative;
+	border: 0;
+	border-radius: 0.1vw;
+	height: 4vh;
+	width: auto;
+	padding-left: 3vw;
+	padding-right:3vw;
+	font-size: 1.3vw;
+	font-family: "Roboto", sans-serif;
+	font-weight: 400;
+	opacity: 0.70;
+	outline: none;
+	text-align: center;
+	vertical-align: middle;
+	padding-top: 1vh;
+	margin-left: 1vw;
+}
+
+body.theme-dark .btn:focus{
+
+   box-shadow: 0 2px 20px 0 rgba(0,0,0,0.40),0 3px 10px 0 rgba(0,0,0,0.40);
+	transform: scale(1.1,1.1);
+	opacity: 1;
+	font-family: "Roboto", sans-serif;
+	background-color: rgba(0,0,0,0.40);
+}
+/*--------------------------*/
+
+/*Cards*/
+
+.card{
+    background-color: whitesmoke;
+    color: dimgray;
+	display: inline-block;
+	position: relative;
+	border: 0;
+	border-radius: 0.1vw;
+	padding-left: 3vw;
+	padding-right:3vw;
+	opacity: 0.70;
+	outline: none;
+	text-align: center;
+	vertical-align: middle;
+	margin-left: 1vw;
+}
+
+.card:focus{
+
+   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.40),0 6px 20px 0 rgba(0,0,0,0.40);
+	transform: scale(1.1,1.1);
+	opacity: 1;
+	background-color: ghostwhite;
+}
+
+body.theme-light .card{
+    background-color: gainsboro;
+    color: black;
+	display: inline-block;
+	position: relative;
+	border: 0;
+	border-radius: 0.2vw;
+	height: 8vh;
+	width: auto;
+	padding-left: 3vw;
+	padding-right:3vw;
+	opacity: 0.70;
+	outline: none;
+	text-align: center;
+	vertical-align: middle;
+	padding-top: 4vh;
+	margin-left: 1vw;
+}
+
+body.theme-light .card:focus{
+
+   box-shadow: 0 2px 20px 0 rgba(0,0,0,0.40),0 3px 10px 0 rgba(0,0,0,0.40);
+	transform: scale(1.1,1.1);
+	opacity: 1;
+	background-color: ghostwhite;
+}
+
+body.theme-dark .card{
+    background-color: transparent;
+    color: whitesmoke;
+	display: inline-block;
+	position: relative;
+	border: 0;
+	border-radius: 0.1vw;
+	height: 8vh;
+	width: auto;
+	padding-left: 3vw;
+	padding-right:3vw;
+	opacity: 0.70;
+	outline: none;
+	text-align: center;
+	vertical-align: middle;
+	padding-top: 4vh;
+
+	margin-left: 1vw;
+}
+
+body.theme-dark .card:focus{
+
+   box-shadow: 0 2px 10px 0 rgba(0,0,0,0.40),0 3px 10px 0 rgba(0,0,0,0.40);
+	transform: scale(1.1,1.1);
+	opacity: 1;
+	font-family: "Roboto", sans-serif;
+	background-color: rgba(0,0,0,0.40);
+}
+
+.card.small{
+    
+	height: 8vh;
+	width: auto;
+	padding-top: 4vh;
+}
+
+.card.med{
+	height: 16vh;
+	width: auto;
+	padding-top: 8vh;
+}
+
+.card.large{
+	height: 24vh;
+	width: auto;
+	padding-top: 12vh;
+}
+
+.card.auto{
+	height: auto;
+	width: auto;
+}
+
+.card-con{
+	height: auto;
+	width: auto;
+	position: relative;
+	display: inline-block;
+	padding-right: 1vw;
+}
+
+.card-con .title{
+	font-size: 1.5vw;
+	text-align: center;
+	display: block;
+}
+
+.card-con .card:focus .title{
+	display: inline-block;
+}
+
+/*--------------------------*/
+
+
+/*Collection/List*/
+
+.collection{
+	list-style:none;
+	display: inline;
+	position: relative;
+}
+
+.collection li{
+	padding-top: 0.1vw;
+	padding-bottom: 0.1vw;
+	margin-top: 1vw;
+	margin-bottom: 1vw;
+	vertical-align: middle;
+	padding-left: 1.5vw;
+	width: 30vw;
+	border-radius: 2px;
+}
+
+
+.collection li .title{
+	font-size: 1.3vw;
+	font-weight: 450;
+}
+
+.collection li .subtitle{
+	font-size: 1.1vw;
+	font-weight: 350;
+	display: block;
+	color: gray;
+}
+
+
+
+.collection li:focus{
+
+   box-shadow: 0 4px 12px 0 rgba(0,0,0,0.40),0 4px 15px 0 rgba(0,0,0,0.40);
+	transform: scale(1.1,1.1);
+	opacity: 1;
+	background-color: white;
+}
+/***********/
+
+/*Containers*/
+
+.row{
+    height:auto;
+    width:100%;
+	overflow: scroll;
+	padding-bottom: 0.5%;
+	display: block;
+}
+
+.row .title{
+	font-size: 1.5vw;
+	font-weight: normal;
+
+}
+
+.rowchild{
+    width: 10000px;  
+    margin-top: 3%;
+	padding-bottom: 2%;
+ -webkit-transition:  all .25s;
+  -moz-transition:  all .25s;
+  -ms-transition:  all .25s;
+  -o-transition:  all .25s;
+  transition:  all .25s;  
+}
+
+/*--------------------------*/
+
+
+
+
+/*Tab Theme*/
+
+.tabs {
+    width:100%;
+    display:inline-block;
+}
+
+.tab-links:after {
+        display:block;
+        clear:both;
+        content:'';
+    }
+
+.tab-links{
+	 background-color:rgba(50,50,50,0.50);
+	margin-top: 0;
+	height: 10%;
+	padding-left: 3%;
+	padding-right: 3%;
+	 top: 0;
+  left: 0;
+  z-index: 9999;
+	position: fixed;
+	width: 100%;
+	text-align: center;
+}
+
+.tab-links li {
+        
+        list-style:none;
+		display: inline;
+    }
+ 
+.tab-links a {
+            padding:2.8vw 2vw;
+            display:inline-block;
+            background:transparent;
+            font-size:16px;
+            font-weight:600;
+            color:darkgray;
+            transition:all linear 0.15s;
+			text-decoration: none;
+			outline: none;
+		 
+        }
+  
+.tab-links li.active a, .tab-links li.active a:focus {
+	
+        color:white;
+    }
+
+
+.tab-links li a:focus{
+	color: white;
+}
+ 
+.tab-content {
+        background:transparent;
+        width:100%;
+        height:100%;
+		position: relative;
+    }
+ 
+.tab {
+            display:none;
+			padding: 6%;
+			padding-top: 8%;
+        }
+ 
+.tab.active {
+            display:block;
+        }
+
+
+
+/*----------------------------------*/
+
