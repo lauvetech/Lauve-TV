@@ -242,8 +242,8 @@ main{
 #movdetails #gradient{
     height:100%;
     width: 100%;
-    background: linear-gradient(to top right, #000000 20%, #000000 25%, transparent 100%),
-		linear-gradient(to top left, #000000 20%, #000000 20%, transparent 100%);
+    background: linear-gradient(to top right, #000000 10%, #000000 10%, transparent 90%),
+		linear-gradient(to top left, #000000 10%, #000000 10%, transparent 90%);
     z-index: 6;
     position: absolute;
     margin-top: 0;
@@ -527,3 +527,6 @@ line-height: 100%;
   transition:  all .25s; 
 }
 
+#reccon .row{
+	overflow: scroll;
+}

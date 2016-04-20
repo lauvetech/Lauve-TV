@@ -267,3 +267,9 @@ $( document ).on( 'keydown', function(e) {
         $('#dim').fadeOut();
     }
 });
+
+$( document ).on( 'keydown','.recbox', function(e) {
+
+         $(document.activeElement).parent().parent().scrollintoview({direction: "horizontal"});
+    
+});
