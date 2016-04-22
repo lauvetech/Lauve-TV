@@ -215,6 +215,13 @@ function gettime(){
 	$("#time").text(time);
 }
 
+function stayinview(){
+	
+	$(document.activeElement).scrollintoview({duration: 100, direction: "horizontal"});
+	
+	
+}
+
 /*------------------------*/
 
 
@@ -224,7 +231,7 @@ $(document).ready(function() {
 	setInterval(gettime, 1000);
 	displaymovies(myarray);
     getrecmovies();
- 
+ 	
 });
 
 
@@ -237,10 +244,19 @@ $("#innerrec").on( 'click', '.recbox', function() {
     
 });
 
+$("#moviecon").on( 'focus','.movbox', function() {
+
+	$(this).scrollintoview({duration: 100, direction: "horizontal"});
+	
+});
+
 $("#innerrec").on( 'focus', '.recbox', function() {
 		//var id = $(this ).find('#id').text();
     	//alert(id);
 		//getrecbgdata(id);
+	
+	$(this).scrollintoview({duration: 100, direction: "horizontal"});
+	
 });
 
 $(document).on( 'focus', '.movbox', function() {
@@ -268,8 +284,3 @@ $( document ).on( 'keydown', function(e) {
     }
 });
 
-$( document ).on( 'keydown','.recbox', function(e) {
-
-         $(document.activeElement).parent().parent().scrollintoview({direction: "horizontal"});
-    
-});
