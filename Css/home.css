@@ -405,12 +405,12 @@ display: none;
 
 .appbox{
         display: inline-flex;
-        border: 1px solid lightgray;
-        background-color: lightblue;
-        border-radius: 0.2vw;
+        border: 1px solid: transparent;
+        background-color: transparent;
+        border-radius: 0.3vw;
         width: 13vw;
         height: 14vh;
-        box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0           1px 20px 0 rgba(0, 0, 0, 0.19);
+        box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0  1px 20px 0 rgba(0, 0, 0, 0.19);
          margin: 0.2%;
         margin-top: 0.3%;
         outline: none;
@@ -425,6 +425,7 @@ display: none;
        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 			25px 0 rgba(0, 0, 0, 0.19);
         transform: scale(1.15, 1.15);
         opacity: 1;
+        border-radius: 0.3vw;
     }
 
 body.theme-light .appbox{
@@ -455,7 +456,7 @@ body.theme-light .appbox{
         display: inline-flex;
         border: 1px solid transparent;
         outline: none;
-        background-color: lightblue;
+        background-color: transparent;
         border-radius: 0.2vw;
         width: 17vw;
         height: 16vh;
