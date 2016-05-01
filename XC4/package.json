@@ -1,0 +1,10 @@
+{
+  "name": "XC4",
+  "version": "1.0.0.0",
+  "main": "index.html",
+  "window": {
+    "toolbar": true,
+    "frame": true,
+	"fullscreen": false
+  }
+}

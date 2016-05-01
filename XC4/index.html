@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Testing XC4 library</title>
+	<script type="text/javascript" src="appManager.js"></script>
+	<script type="text/javascript" src="appx.js"></script>
+</head>
+<body>
+	<h1>Hello world</h1>
+	<script type="text/javascript">
+		//usage
+		var appmanager = new appManager(); //only load one instance of this
+		appmanager.loadNew("apps/example.manifest"); //this loads the application manifest
+		appmanager.lastApplication.start(); //This loads and starts the application
+		
+	</script>
+</body>
+</html>

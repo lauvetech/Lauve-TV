@@ -1,0 +1,10 @@
+{
+	"application":{
+		"name":"example Application",
+		"version":"1.0.0.0",
+		"path":"index.html"
+	},
+	"sources":{
+		"image":"/Views/Test-App/Picture2.jpg"
+	}
+}
