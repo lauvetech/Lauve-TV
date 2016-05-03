@@ -6,7 +6,7 @@ jQuery(document).ready(function() {
         // Show/Hide Tabs
 		 
         jQuery('.tabs ' + currentAttrValue).fadeIn().siblings().hide();
- 		
+ 		jQuery('.tabs ' + currentAttrValue + 'a:first-child').focus();
         // Change/remove current tab to active
         jQuery(this).parent('li').addClass('active').siblings().removeClass('active');
  

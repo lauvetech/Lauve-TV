@@ -1,0 +1,10 @@
+{
+	"application":{
+		"name":"Youtube",
+		"version":"1.0.0.0",
+		"path":"www.youtube.com/tv"
+	},
+	"sources":{
+		"image":"/Views/Youtube/logo.jpg"
+	}
+}

@@ -356,6 +356,11 @@ body.theme-light .movbox #movinfo{
 	color: whitesmoke;
 }
 
+body.theme-light .movbox #movinfo{
+	
+	color: dimgray;
+}
+
 .movbox #movinfo{
 	color: #333333;
     opacity: 0;
@@ -428,6 +433,10 @@ display: none;
         border-radius: 0.3vw;
     }
 
+.appbox #apptitle{
+	visibility: hidden;
+}
+
 body.theme-light .appbox{
 	border: 0px;
 	opacity: 0.9;
@@ -492,6 +501,10 @@ body.theme-light .recbox #recinfo{
 	color: whitesmoke;
 }
 
+body.theme-dark .recbox #recinfo{
+	color: dimgray;
+}
+
 .recbox #recinfo{
     opacity: 0;
     width: 100%;
@@ -527,4 +540,8 @@ body.theme-light .recbox #recinfo{
 
 #reccon .row{
 	overflow: scroll;
+}
+
+.row .title{
+	left:10vw;
 }
