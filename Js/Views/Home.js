@@ -284,3 +284,10 @@
 		}
 	});
 
+
+$( document ).on( 'click', '.appbox', function() {
+			var id = $(this ).find('#apptitle').text();
+			launchApplication(id);
+		
+		
+	});

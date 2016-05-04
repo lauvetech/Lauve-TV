@@ -5,6 +5,7 @@ var appManager = null;
 jQuery(document).ready(function() {
 	appManager = new TitusApplicationManager(); //prepare the loading mechanism
 	appManager.populateApps();
+	
 });
 
 function launchApplication(appID){

@@ -23,11 +23,13 @@ class TitusApplicationManager{
 	}
 
 	showContainer(){
-		document.body.insertBefore(this.appContainer,document.getElementById('homeback'));
+		document.body.insertBefore(this.appContainer,document.getElementById('app-con'));
+
 	}
 
 	hideContainer(){
 		document.body.removeChild(this.appContainer);
+		
 	}
 
 	loadApplication(jsonPath){
