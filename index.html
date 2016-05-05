@@ -20,7 +20,7 @@
    
     <main class="main">
     
-    <div id="searchcon" class="row">
+		<div id="searchcon" class="row">
         
         <div id="searchbar" class="dpad-focusable" tabindex="0">
             <p>Search...</p>
@@ -33,7 +33,7 @@
   </div>
   
   
-  <div class="row" id="reccon">
+  		<div class="row" id="reccon">
     <h1 class="title">Recommendations</h1>
 
     <div id="innerrec" class="rowchild">
@@ -52,7 +52,7 @@
 </div>  
 
 
-<div class="row" id="moviecon">
+		<div class="row" id="moviecon">
 	
     <h1 class="title">Movies</h1>    
 
@@ -70,7 +70,7 @@
 </div>   
 
 
-<div class="row" id="appcon">
+		<div class="row" id="appcon">
 	
    <!--  <h1 class="title">Apps & Games</h1>
 
@@ -111,13 +111,12 @@
      
  </div> 
  
-</div> 
 
 
-</main>   
+	</main>   
 	
 	
-	<div id="dim">
+	<div id="system">
     
     <div id="movdetails" class="fadeIn">
         <div id="con">
@@ -132,11 +131,12 @@
                         <p id="runtime">Runtime</p>
                         <p id="vote">Vote</p>
                     </div>
+					
                     <p id=title>Title</p>
                     <p id="cast">Cast</p>
                     <p id="plot">Plot</p>
                     <div id="buttons">
-                       <button class="btn-light dpad-focusable" tabindex="0"><i class="fa fa-play" aria-hidden="true"></i></button>
+                       <button class="btn-light dpad-focusable" tabindex="0" id="mov-play"><i class="fa fa-play" aria-hidden="true"></i></button>
                        <button class="btn-light dpad-focusable" tabindex="0"><i class="fa fa-television" aria-hidden="true"></i></button>
                        
                    </div>
@@ -144,12 +144,22 @@
                </div>
            </div>
            
-           <div id="bottom"></div>
+           <div id="bottom">
+				<div class="row">
+			   		<h2 class="title">Similar Movies</h2>
+					<div class="rowchild" id="similar-mov">
+						  
+					</div>
+			   </div>
+			</div>
        </div>
    </div>   
    
 </div>
-
+	
+	<div id="loading">
+		<p><i class="fa fa-refresh fa-spin  fa-3x" aria-hidden="true"></i></p>	
+	</i></div>
 	
 	<div class="app-container">
 	
@@ -172,7 +182,8 @@
 <script type="text/javascript" src="Js/Plugins/dpad-nav-lib-0.0.4.min.js"></script> 
 <script type="text/javascript" src="Js/Plugins/jquery.scrollintoview.min.js"></script> 	
 <script src="Js/Plugins/moment.js"></script> 
-<script src="Js/Plugins/appsystem.js"></script> 	
+<script src="Js/Plugins/bg-loaded.js"></script> 
+
 
 <script type="text/javascript" src="/JS/TitusSDK/titus.js"></script>
 <script type="text/javascript" src="/JS/TitusSDK/titus_main.js"></script>

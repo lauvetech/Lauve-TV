@@ -65,11 +65,30 @@ main{
 
 /*-----------------------------------*/
 
+/*loading*/
+#loading{
+	display: none;
+    z-index:100;
+	background: rgba(0,0,0,0.80);
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	text-align: center;
+	
+}
 
+#loading p{
+	height: 100vh;
+	line-height: 100vh;
+}
+
+/*-----------------------------------*/
 
 /*Movie Details*/
 
-#dim{
+#system{
     display: none;
     z-index:20;
 	background: rgba(0,0,0,0.90);
@@ -253,7 +272,29 @@ main{
 	z-index: 10;
 	position: relative;
 }
-  
+
+#movdetails #bottom .row .rowchild{
+	text-align: left;
+	height: 30vh;
+	padding-left: 1vw;
+}
+
+ #movdetails #bottom .row .title{
+	 left: 6vw;
+	
+}
+
+#movdetails #bottom .row .rowchild .movbox #movinfo{
+	text-align: left;
+	top: 0;
+	padding: 0;
+	
+}
+
+#movdetails #bottom .row .rowchild .movbox {
+	width: 11vw;
+	
+}
 /**/
 
 
@@ -339,7 +380,7 @@ body.theme-light #quick-settings #time{
     
 .movbox:focus{
 
-		box-shadow: 0 5px 9px 0 rgba(0, 0, 0, 0.2), 0 7px 			24px 0 rgba(0, 0, 0, 0.19);
+		box-shadow: 0 5px 9px 0 rgba(0, 0, 0, 0.2), 0 7px 24px 0 rgba(0, 0, 0, 0.19);
         opacity: 1;
 		border: 1px solid transparent;
         transform: scale(1.15, 1.15);
@@ -364,7 +405,7 @@ body.theme-light .movbox #movinfo{
 .movbox #movinfo{
 	color: #333333;
     opacity: 0;
-    width: 100%;
+    width: 100vw;
     background: rgba(255,255,255,0.6);
 	padding: 2vw;
 	text-align: center;

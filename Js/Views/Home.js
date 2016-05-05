@@ -109,7 +109,7 @@
 	/*Get Movie Data by ID and shows details screen*/
 
 
-		function getrecmoviedata(id) {
+		/*function getrecmoviedata(id) {
 		
 	var request = new XMLHttpRequest();
 	var  response ;
@@ -128,12 +128,80 @@
 	request.send();
 
 
-	  }
+	  }*/
+		
+		function getrecmoviedata(id) {
+	  var xhttp = new XMLHttpRequest();
+	
+			xhttp.addEventListener("loadend", loadEnd);
+
+function loadEnd(e) {
+  $('#loading').fadeOut();
+}
+			
+	xhttp.onload = function(e) {
+  	$('#loading').fadeIn();
+}
+	
+	  xhttp.onreadystatechange = function() {
+		if (xhttp.readyState == 4 && xhttp.status == 200) {
+		   response = xhttp.responseText;
+		  var json = JSON.parse( response );
+		    showmoviedetail(json);
+			 $('#loading').fadeOut();
+			window.dpadFocusController.reset();
+		}
+		   xhttp.onerror = function onError(e) {
+		$('#movdetails').css('display', 'none');
+	}
+		  
+	 };
+		
+	  xhttp.open("GET", 'http://api.themoviedb.org/3/movie/' + id + '?api_key=' + tmdb, true);
+	  xhttp.send();
+	}
+
+		
+		function getsimilarmoviedata(id) {
+		var array;
+	  var xhttp = new XMLHttpRequest();
+			
+	/*	
+	xhttp.addEventListener("loadend", loadEnd);
+
+function loadEnd(e) {
+  $('#loading').fadeOut();
+}
+			
+	xhttp.onload = function(e) {
+  	$('#loading').fadeIn();
+}
+	*/
+	  xhttp.onreadystatechange = function() {
+		if (xhttp.readyState == 4 && xhttp.status == 200) {
+		   response = xhttp.responseText;
+		  var json = JSON.parse( response );
+		  array = json.results;
+		  showsimilarmovies(array);
+		window.dpadFocusController.reset();
+			
+		}
+		   xhttp.onerror = function onError(e) {
+		$('#movdetails #bottom').css('display', 'none');
+	}
+ 
+	 };
+		
+	  xhttp.open("GET", 'http://api.themoviedb.org/3/movie/' + id + '/similar?api_key=' + tmdb, true);
+	  xhttp.send();
+	}
+
+	/*-------------------------*/
 
 		function showmoviedetail(array) {
 			
-		var overlay = document.getElementById('dim');
-		var movdetails =               document.getElementById('movdetails');
+		var overlay = document.getElementById('system');
+		var movdetails = document.getElementById('movdetails');
 		
 		var baseurla = "http://image.tmdb.org/t/p/w300";
 		var imgurla = array.poster_path;
@@ -151,7 +219,18 @@
 			
 		$(title).text(array.title); 
 		$(cast).text(" ");  
-		$(plot).text(array.overview);  
+		//$(plot).text(array.overview);  
+		//$(plot).text((array.overview).slice(0,200) + "...")
+		
+		if (array.overview.length > 250){
+			$(plot).text((array.overview).slice(0,250) + "...")
+		
+		}
+			else{
+				$(plot).text(array.overview); 
+			}
+			
+
 		$(vote).text(array.vote_average);
 		$(runtime).text(array.runtime);
 		$(year).text((array.release_date).slice(0,4));
@@ -161,12 +240,49 @@
 			
 		//overlay.style.display = "block";
 		//movdetails.style.display = "block";
-			$(overlay).fadeIn();
+			$(".main").css("display","none");
+			$(overlay).show();
 			$(movdetails).fadeIn();
-		  
+			//window.dpadFocusController.reset();
+			$("#mov-play").focus();
+			window.dpadFocusController.reset();
 	  }
 
-
+		function showsimilarmovies(arr){
+		 $('#similar-mov').empty();
+		var baseurl = "http://image.tmdb.org/t/p/w500/";
+		var imgurl = "";
+		var i;
+	  for (i = 0; i < arr.length; i++) {
+		imgurl = arr[i].poster_path;
+		var recitem = document.createElement("a");
+		recitem.className = "movbox dpad-focusable";
+		recitem.id = "sim-mov";
+		recitem.tabIndex = "0";
+		recitem.style.backgroundImage = "url(" + baseurl + imgurl + ")";
+		recitem.style.backgroundColor="transparent";  
+		  
+		  
+		var info = document.createElement("div");
+		info.id = "movinfo";
+		var p1 = document.createElement("p");
+		var p2 = document.createElement("p");
+		p1.id = "movtitle";
+		p2.id = "id";
+		var title = document.createTextNode(arr[i].title);
+		var id = document.createTextNode(arr[i].id);  
+		p1.appendChild(title);  
+		p2.appendChild(id); 
+		info.appendChild(p1);
+		info.appendChild(p2);
+		recitem.appendChild(info);
+		var innerview = $('#similar-mov');
+		$(innerview).append(recitem);
+	  	window.dpadFocusController.reset();
+		}
+			
+			
+		}
 	/*-------------------------*/
 
 
@@ -231,18 +347,30 @@
 		setInterval(gettime, 1000);
 		displaymovies(myarray);
 		getrecmovies();
+		window.dpadFocusController.reset();
 		
 	});
+
 
 
 	$("#innerrec").on( 'click', '.recbox', function() {
-
+		
+	
 		var id = $(this ).find('#id').text();
 	   getrecmoviedata(id);
-
-		$("#homeback").fadeOut(200);
+		getsimilarmoviedata(id);
 		
 	});
+
+		$("#similar-mov").on( 'click', '.movbox', function() {
+		
+		
+		var id = $(this ).find('#id').text();
+	   getrecmoviedata(id);
+		getsimilarmoviedata(id);
+
+	});
+
 
 	$("#moviecon").on( 'focus','.movbox', function() {
 
@@ -280,14 +408,9 @@
 	$( document ).on( 'keydown', function(e) {
 		if ( e.keyCode === 27 ) {
 			$('#movdetails').fadeOut();
-			$('#dim').fadeOut();
+			$('#system').fadeOut();
+			$(".main").fadeIn();
+			window.dpadFocusController.reset();
 		}
 	});
 
-
-$( document ).on( 'click', '.appbox', function() {
-			var id = $(this ).find('#apptitle').text();
-			launchApplication(id);
-		
-		
-	});
