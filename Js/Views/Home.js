@@ -152,7 +152,12 @@ function loadEnd(e) {
 			window.dpadFocusController.reset();
 		}
 		   xhttp.onerror = function onError(e) {
+		   		e.preventDefault();
+				lauve.alert("Looks like there was a error loading this title", function(e){},{
+					ok: "Ok"});
 		$('#movdetails').css('display', 'none');
+		$(".main").fadeIn();
+
 	}
 		  
 	 };
@@ -177,6 +182,7 @@ function loadEnd(e) {
   	$('#loading').fadeIn();
 }
 	*/
+
 	  xhttp.onreadystatechange = function() {
 		if (xhttp.readyState == 4 && xhttp.status == 200) {
 		   response = xhttp.responseText;
@@ -243,9 +249,9 @@ function loadEnd(e) {
 			$(".main").css("display","none");
 			$(overlay).show();
 			$(movdetails).fadeIn();
-			//window.dpadFocusController.reset();
-			$("#mov-play").focus();
 			window.dpadFocusController.reset();
+			$("#mov-play").focus();
+			//window.dpadFocusController.reset();
 	  }
 
 		function showsimilarmovies(arr){
@@ -278,6 +284,7 @@ function loadEnd(e) {
 		recitem.appendChild(info);
 		var innerview = $('#similar-mov');
 		$(innerview).append(recitem);
+		 $('#similar-mov').scrollLeft(0);
 	  	window.dpadFocusController.reset();
 		}
 			
